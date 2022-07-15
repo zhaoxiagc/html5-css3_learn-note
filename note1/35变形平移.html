@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-color: silver;
+    }
+    .box1{
+        width:200px;
+        height: 200px;
+        background-color: #bfa;
+        margin: 0 auto;
+        transform: translateX(100px);
+    }
+    .box2{
+        width:200px;
+        height: 200px;
+        background-color: orange;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto; }
+       
+        /*
+        这种居中方式只适用于大小确定的元素的居中
+        */
+        
+    
+    .box3{
+        background-color: grey;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        
+    }
+    /*
+        变形就是通过CSS来改变元素的形状或者位置
+            -变形不会影响到页面的布局，元素不会脱离文档流
+        transform 用来设置元素变形的效果
+            -平移:
+                translateX()    元素沿着X轴方向平移
+                translateY()    元素沿着Y轴方向平移
+                translateZ()    元素沿着Z轴方向平移
+                平移元素时，百分比是相对于自身进行计算的
+        注意，一个元素中只能有一个transform生效，后面的会把前面的覆盖掉
+        所以写的时候最好只写一个
+    */
+    .box4,.box5{
+        width: 220px;
+        height: 300px;
+        background-color: white;
+        float: left;
+        margin: 0 10px;
+        transition: all .3s;
+    }
+    .box4:hover,
+    .box5:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 5px 10px rgba(0,0 , 0 ,.3);
+    }
+</style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">aaa</div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../item/xiaomi/fa/css/all.css">
+    <style>
+        p{
+            /*
+            color 设置字体颜色
+
+            font-size设置字体大小
+                em 相当于当前元素的一个font-size
+                rem 相当于根元素的一个font-size
+
+            font-family设置字体格式（字体族）
+                字体分类有以下几种：
+                    serif   衬线字体（字母宽度不同）
+                    sans-serif   非衬线字体
+                    fantasy    草书
+                    monospace    等宽字体(确保每个字母的宽度是一样的)
+                注意：字体分类由以上指定，但浏览器会自动使用该类别下的字体
+                        一般不用，因为不同浏览器中可能会显示不一样的字体
+
+                font-family 可以同时指定多个字体，多个字体之间使用，隔开
+                            字体生效时优先使用第一个，第一个无法使用则使用第二个，以此类推
+            
+            @font-face可以将服务器中的字体提供给用户去使用
+            
+            问题：
+                1.加载速度
+                2.版权
+                3.字体格式
+                
+            特点：
+                1.不会失真
+                2.字体文件较小
+            */
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            @font-face {
+                font-family: ;   /*指定字体的名字，注意和实际字体概念不同*/
+                src: url();      /*服务器中字体的的路径*/
+            }
+        }
+
+        li{
+            list-style: none;
+        }
+        li::before{
+            content: '\f1bb';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin: 10px;
+            color: green;
+        }
+        /*
+        图标字体（iconfont）：
+            网页中使用一些小的图标，比如地图定位点，购物车图标等，我们可以通过图片来引入图标，
+            但是图片大小会比较大，并且非常地不灵活
+            所以在使用图标时，我们还可以将图标直接设置为字体，通过@font-face来对字体进行引用
+            这样就可以通过使用字体的方式来引用图标了
+            平时要用的话可以直接去网上搜图标字体库，国内用的比较多的是阿里图标字体库，最常用的是font awesome图标字体库
+
+            例子：
+                fontawesome使用步骤
+                1.下载https://fontawesome.com/
+                2.解压
+                3.将css和webfonts移动到项目中
+                4.将all.css引入到网页中
+                5.使用图标字体
+                    -直接通过类名来使用图标字体
+                    class="fas fa-bell"    铃铛
+                    class="fab fa-accessible-icon"   运动图标
+                    至于具体用fas还是fab，需要自己去尝试，fab不行就换成fas，fas不行就换成fab
+                    可以通过内联样式给图标字体设置大小、颜色等属性
+
+            1.通过伪元素来设置图标字体
+                1.找到要设置图标的元素通过before或after选中
+                2.在content中设置字体的编码，编码去文档中自己找，就是最右侧十六进制那一堆
+                3.设置字体的样式（二选一）
+                    fab:
+                    font-family:'Font Awesome 5 Brands';
+                    fas:
+                     font-family:'Font Awesome 5 Free';
+                     font-weight: 900;
+            2.通过类class来引用字体
+            3.通过实体来引用，用法看下面的例子
+                &#x图标的编码
+        */    </style>
+</head>
+<body>
+    <p>今天天气真不错，<br> hello how are you！</p>
+    <i class="fas fa-film"></i>
+    <i class="fas fa-check-circle" style="font-size: 60px; color: red;"></i>
+
+
+    <ul>
+        <li>锄禾日当午</li>
+        <li>汗滴禾下土</li>
+        <li>谁知盘中餐</li>
+        <li>粒粒皆辛苦</li>
+    </ul>
+
+    <p class="fas">&#xf0d1;想要一个图标</p>
+</body>
+</html>

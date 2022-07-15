@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-left: 0;
+        }
+        .box2{
+            background-color: #bfa;
+            transition: all 2s;
+        }
+        .box3{
+            background-color: orange;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: steps(4,end);
+            transition-delay: 2s;
+        }
+        .box4{
+            background-color: yellowgreen;
+            transition: 2s 2s ease-in;
+        }
+        /*
+        transition  过渡
+            通过过渡可以指定一个属性发生变化时的切换方式
+            通过过度可以创建一些非常好的效果，提升用户的体验
+
+            transition-property：指定要执行过渡的属性，过度属性之间使用逗号隔开
+                如果所有的属性都需要添加过度，则使用all
+                大部分属性都支持过度效果
+                注意：过渡时必须是从一个有效值向另一个有效值过渡，例如margin不能设置为auto
+            transition-duration：指定过渡效果持续的时间
+                时间单位是秒和毫秒（1000ms=1s）
+                不同属性的过度时间用逗号隔开
+            transition-timing-function：过渡的时序函数
+                指定动画过渡执行的方式
+                可选值：
+                    ease 默认值：慢速开始，先加速，再减速至停止，淡入淡出
+                    linear  匀速运动
+                    ease-in 加速运动，淡入
+                    ease- out  减速运动，淡出
+                    ease-in-out   先加速，再减速，淡入淡出
+                    都可以用贝塞尔曲线来进行描述：
+                        可以用cubic-bezier（）来指定时序函数，包含四个数字，其实代表的是两个点的坐标，可以直接去网上查找
+                        https://cubic-bezier.com
+                    steps() 指定过渡的跳转次数，将总的过度时间平均分配
+                        可以设置第二个值，使用start指定读秒前执行，end指定读秒后执行
+            transition-delay: 过渡效果的延迟，直接设置时间长度就可
+
+
+            transition：简写属性
+                可以设置所有属性，没有严格的次序要求，只有一个要求
+                就是如果要加上延迟，则两个时间中，第一个是过度时间，第二个是延迟时间
+        */
+
+        .box1:hover div{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-left: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

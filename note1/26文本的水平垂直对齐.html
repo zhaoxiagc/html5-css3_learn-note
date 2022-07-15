@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1{
+            width: 500px;
+            text-align: justify;
+        }
+
+        /*
+        text-align  文本的水平对齐
+            可选值：
+            left 左侧对齐
+            right 右侧对齐
+            center 居中对齐
+            justify 两端对齐
+        */
+        .p2{
+            width: 500px;
+            border: 1px red solid;
+            font-size: 50px;
+        }
+        span{
+            font-size: 20px;
+            border:1px solid blue;
+            vertical-align: middle;
+        }
+
+
+        /*
+        vertical-align 设置元素垂直对齐的方式
+            可选值：
+            baseline 默认值，基线对齐，子元素的基线和父元素的基线是对齐的
+            top 顶部对齐
+            bottom 底部对齐
+            middle 居中对齐，将子元素的中线和前面文本的中线对齐，所以不是严格意义上的居中
+            直接指定一个值
+        */
+
+        p{
+            border: 1px red solid;
+        }
+        img{
+            width: 400px;    /*注意图片插入后下边缘与p标签的边框之间有一定的距离，这就是图片的基线*/
+            vertical-align: middle;
+            /*通过将垂直对齐的值设置为除了基线对齐以外的值来使得图片下面的间距消失*/
+        }
+    </style>
+</head>
+<body>
+    <div class="p1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, laboriosam! Commodi, molestias obcaecati officia, tempora facere nostrum sit eveniet libero nobis cupiditate, ab maxime! Dolorum rem asperiores dolor doloremque sequi.
+    </div>
+
+    <div class="p2">今天天气Helloyx<span>真不错hello</span></div>
+
+    <p><img src="../exercise/01.jpg" alt="">这张照片好好看呀</p>
+</body>
+</html>

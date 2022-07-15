@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            font-size: 50px;
+            text-decoration: underline red dotted;
+        }
+
+        /*
+        text-decoration 设置文本修饰
+            可选值：
+                none 默认值，什么也没有
+                underline 添加下划线
+                line-through 删除线，从文本中间穿过
+                overline 上划线
+
+            注意：text-decoration的属性值除了线的位置以外，还可以设置颜色和线条样式
+                    但是IE浏览器不兼容
+        */
+
+
+        .box2{
+            width:200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;    /*将溢出的部分用省略号来显示*/
+        }
+
+        /*
+        white-space 用来设置网页如何处理空白
+            可选值：
+                normal 默认值
+                nowarp 不换行
+                pre 保留空白，输入的空格都会被显示出来，所以文本输入什么样，就显示什么样
+
+        */
+    </style>
+</head>
+<body>
+   <div class="box1">
+       今天天气真不错
+   </div>
+   <div class="box2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At qui eaque nam doloremque consequatur delectus nihil, quos eius id reprehenderit, minima recusandae eveniet debitis nulla, velit alias cumque repellendus placeat?
+        qqq
+            aaa
+                eeee
+   
+    </div>
+</body>
+</html>

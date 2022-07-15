@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            perspective: 800px;
+        }
+        body{
+            border: 1px solid black;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-image: url(../exercise/10.1米兔.png);
+            margin:200px auto;
+            transition:1s;
+        }
+
+        /*
+        通过旋转可以使元素沿着x或者y或者z轴旋转一个指定的角度或者圈数
+            rotateX()
+            rotateY()
+            rotateZ()
+            注意：使用transform中的translate和rotate时需要注意，使用顺序不同，呈现的效果也不同
+                这是因为旋转会使得z轴的方向发生改变
+            当我们用将图片进行翻转时，就可以看到图片的背面，
+            但可以设置是否显示图片的背面，用backface-visibility，取值有hidden和visible
+
+        */
+        body:hover .box1{
+            transform: rotateY(180deg) translateX(100px) ;
+            backface-visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

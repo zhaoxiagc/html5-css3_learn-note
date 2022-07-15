@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #afc;
+            float: left;
+        }
+        .box2{
+            width: 300px;
+            height: 150px;
+            background-color: paleturquoise;
+            float: left;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            clear:both;
+        }
+        
+        
+        .box4{
+            border: #afc 10px solid;
+        }
+        .box5{
+            width: 300px;
+            height: 60px;
+            background-color: paleturquoise;
+            float: left;
+        }
+        .box6{
+            clear: both;
+        }
+       /*clear
+        作用：清楚浮动元素对当前元素所产生的影响
+        可选值：
+            left  清除左侧浮动元素对当前元素的影响
+            right 清除右侧浮动元素对当前元素的影响
+            both  清除两侧中最大影响的那侧
+
+        原理：
+            设置清楚浮动以后，浏览器会自动为元素添加一个上外边距
+            以使其位置不受其他元素的影响
+
+        clear可以很好地解决塌陷问题，没有什么副作用
+        但是额外添加的子元素改变了结构，而高度塌陷问题是表现问题，
+        我们还是希望用CSS自己来解决自己的问题，所以就有了after伪类来清除浮动
+   */
+
+        .box7{
+            border: rgb(20, 233, 105) 10px solid;
+        }
+        .box8{
+            width: 300px;
+            height: 60px;
+            background-color: rgb(7, 201, 201);
+            float: left;
+        }
+        .box7::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+
+    <div class="box4">
+            <div class="box5"></div>
+            <div class="box6"></div>
+    </div>
+    <br>
+    <div class="box7">
+        <div class="box8"></div>
+    </div>    
+</div>
+    
+</body>
+</html>

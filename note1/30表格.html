@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 50%;
+            border: 1px solid black;
+            text-align: center;
+            border-spacing: 0px;
+            border-collapse: collapse;
+        }
+
+        /*
+            border-spacing 指定边框之间的距离
+            border-collapse: collapse;   设置边框的合并
+        */
+        td{
+            border: 1px solid black;
+            height: 50px;
+            vertical-align: middle;
+           
+        }
+        table tr:nth-child(2n){
+            background-color: #bfa;
+        }
+        /*
+        ！！注意：
+            如果表格中没有使用tbody而是直接使用tr,
+            那么浏览器会自动创建一个tbody，并且tr全部放到tbody中，
+            所以注意，tr不是table的子元素，无法通过table>tr来选中tr
+        */
+
+
+    </style>
+</head>
+<body>
+    <!--
+        表格：
+        在现实生活中，我们经常需要使用表格来表示一些格式化的数据，
+            课程表，成绩单，人名单……
+        同样在网页中，我们也需要使用表格，通过table标签来创建一个表格
+            在table中使用tr来表示行，有几个tr就有几行
+            在tr中使用td来表示一个单元格，有几个td就有几个单元格
+
+                colspan 表示横向合并单元格
+                rowspan 表示纵向合并单元格
+    -->
+    <table border="1" width="50%" align="center">
+        <tr>
+            <td  rowspan="2">a1</td>
+            <td>b1</td>
+            <td>c1</td>
+            <td>d1</td>
+        </tr>
+        <tr>
+            <td>b2</td>
+            <td>c2</td>
+            <td>d2</td>
+        </tr>
+        <tr>
+            <td>a3</td>
+            <td>b3</td>
+            <td>c3</td>
+            <td>d3</td>
+        </tr>
+        <tr>
+            <td>a4</td>
+            <td>b4</td>
+            <td colspan="2">c4</td>
+        </tr>
+    </table>
+
+<br>
+    <!--
+        长表格：
+            可以将一个表格分为三个部分：
+            头部 thead
+            主体 tbody
+            底部 tfoot
+
+            th 表示头部的单元格
+    -->
+    <table width="50%" border="1" align="center" >
+        <thead>
+            <tr>
+                <th>日期</th>
+                <th>收入</th>
+                <th>支出</th>
+                <th>合计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2000.2.1</td>
+                <td>700</td>
+                <td>600</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2000.2.1</td>
+                <td>700</td>
+                <td>600</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2000.2.1</td>
+                <td>700</td>
+                <td>600</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>2000.2.1</td>
+                <td>700</td>
+                <td>600</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>合计</td>
+                <td>100</td>
+            </tr>
+        </tfoot>
+    </table>
+
+<br>
+
+    <table>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>地址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>猪八戒</td>
+            <td>男</td>
+            <td>28</td>
+            <td>高老庄</td>
+        <tr>
+            <td>3</td>
+            <td>沙僧</td>
+            <td>男</td>
+            <td>38</td>
+            <td>流沙河</td>
+
+    </table>
+</body>
+</html>

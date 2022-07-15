@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+        }
+        h1{
+            color: green;
+        }
+        #fourth{
+        color:rgb(79, 14, 133);
+        font-size: large;
+        }
+        .last{
+            color: brown;
+            font-size: small;
+        }
+        .third{
+            color: aqua;
+            font-size: 20px;
+        }
+        .col1{
+            color:yellow;
+        }
+        div.col1{font-size: 50px;}    
+        div > span{
+            color:green;
+            font-size: larger;
+        }
+        div span{
+            color:grey;
+        }
+        p + span{color: blue;}
+        div>p>span{color: darkmagenta;}
+        
+        p[title*="em"]{color:rgb(165, 121, 130)}
+        </style>
+
+    <style>
+        ul>li:first-child{color: blue;}   /*因为ul的第一个子元素是span，所以这里的li是无效的*/
+        ul>li:nth-child(3){color: chocolate;}
+        ul>li:first-of-type{color:aqua}
+    </style>
+        
+
+    <style>
+        p::selection{
+            background-color: yellowgreen;
+        }
+
+        div::before{
+            content: "abc";
+            color:red
+        }
+    </style>
+<!--选择器：
+    1. 元素选择器
+    2. id选择器：根据元素的id属性值，选中一个元素，语法：#id属性值
+    3. calss选择器，它和id类似，但不同是class可以重复使用
+        可以通过class来给元素分组
+        可以给一个元素添加多个class选择器，空格隔开
+    4. 通配选择器
+        语法：*{}，作用是选中页面中的所有元素
+    5. 交集选择器：选中同时符合多个条件的元素
+        语法：选择器1选择器2选择器3{}
+        注意：交际选择器中如果有元素选择器，必须让元素选择器开头
+    6. 选择器分组：同时选择多个选择器对应的元素
+        语法：选择器1，选择器2，选择器3{}
+    7. 关系选择器：
+        子元素选择器：父元素>子元素，例如div>span
+        后代元素选择器：可以选中指定元素内的所有元素。语法：祖先 后代
+        兄弟元素选择器：
+    8. 属性选择器
+        [属性名]选择含有指定属性的元素
+        [属性名=属性值]选择含有指定属性和属性值的元素
+        [属性名^=属性值]选择属性值以指定值开头的元素
+        [属性名$=属性值]选择属性值以指定值结尾的元素
+        [属性名*=属性值]选择属性值中含有某值的元素
+    9. 伪类选择器
+            伪类：不存在的类，特殊的类，用来描述元素的特殊状态
+            比如：第一个元素，被点击的元素，鼠标移入的元素
+            伪类一般使用：开头
+                ：first-child 第一个子元素
+                ：last-child 最后一个子元素
+                ：nth-child () 选中第n个子元素
+                以上伪类都是根据所有子元素进行排序的
+
+                ：first-of-type
+                ：last-of-type
+                ：nth-of-type()
+                这几个伪类的功能和上述的类似，不同点是它们是在同类型元素中进行排序
+
+                :not()伪类   作用是将符合条件的元素从选择器中去除
+            a元素的伪类：
+                a:link 用来表示没有访问过的链接
+                a:visited 用来表示访问过的链接，由于隐私的原因，所以visited这个伪类只能修改元素的颜色
+                ：hover 用来表示鼠标移入的效果，可以有很多属性
+                ：active 用来表示鼠标点击的状态
+    10. 伪元素选择器
+            伪元素：表示页面中一些特殊的并不真实存在的元素（特殊的位置）
+                伪元素使用::开头
+                    ::first-letter 表示第一个字母
+                    ::first-line 表示一一行
+                    ::selection 表示选中的内容
+                    ::before 表示元素的开始
+                    ::after 表示元素的最后
+                        before和after必须结合content属性来使用，并且不能被选中
+
+    
+
+    优先级：内联样式>id选择器>class选择器>标签选择器/伪类选择器>伪元素选择器
+--> 
+
+<!--
+    元素关系：
+        父元素：直接包含子元素的元素就是父元素
+        子元素：直接被父元素包含的元素就是子元素
+        祖先元素：直接或间接包含后代的元素就是祖先元素，一个元素的父元素也是它的祖先元素
+        后代元素：直接或间接被祖先元素包含的元素就是后代元素
+        兄弟元素：拥有相同父元素的元素就是兄弟元素
+-->
+</head>
+<body>
+   
+    <h1>春晓</h1>
+    <h2>唐</h2>
+    <p>春眠不觉晓</p>
+    <p>处处闻啼鸟</p>
+    <p class="third" class="last" >夜来风雨声</p>
+    <p class="last" class="third">夜来风雨声</p>
+    <!--通过上面两行代码可以看出，class选择器具有就近原则-->
+    <p id="fourth" class="last">花落知多少</p>
+
+    <br>
+
+    <p class="col1">我是p标签</p>
+    <div class="col1">我是div标签</div>
+
+    <div>
+        <p>第一层第一行
+            <span>第二层第一行</span>
+            <p>第二层第二行</p>
+        </p>
+        <span>第一层第二行</span>
+        <span>第一层第三行</span>
+    </div>
+    <br>
+
+    <p title="poem1">少小离家老大回</p>
+    <p title="poem2">乡音未改鬓毛衰</p>
+    <p title="poem3">儿童相见不相识</p>
+    <p>笑问客从何处来</p>
+
+    <!--ul>li*5-->
+    <ul>
+        <span>第零个</span>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            height: 500px;
+            border-bottom: 10px solid black;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #bfa;
+            animation: ball 0.8s 2s ease-in forwards;
+        }
+        @keyframes ball{
+            from{
+                margin-top: 0;
+            }
+            20%,60%,to{
+                margin-top: 400px;
+                animation-timing-function: ease-in;
+            }
+            40%{
+                margin-top: 100px;
+            }
+            80%{
+                margin-top: 200px;
+            }
+        }
+        .outer1 div{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            animation: balls .5s linear alternate infinite;
+            float: left;
+        }
+        div .box3{
+            animation-delay: 0.2s;
+        }
+        div .box4{
+            animation-delay: 0.3s;
+        }
+        div .box5{
+            animation-delay: 0.4s;
+        }
+        div .box6{
+            animation-delay: 0.5s;
+        }
+        div .box7{
+            animation-delay: 0.6s;
+        }
+        div .box8{
+            animation-delay: 0.7s;
+        }
+        div .box9{
+            animation-delay: 0.8s;
+        }
+        div .box10{
+            animation-delay: 0.9s;
+        }
+        @keyframes balls{
+            from{
+                margin-top: 0;
+            }
+            to{
+                margin-top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <div class="box1"></div></div>
+
+    <div class="outer1">
+        <div class="box2" style="background-color: blue;"></div>
+        <div class="box3" style="background-color: rgb(32, 182, 62);"></div>
+        <div class="box4" style="background-color: pink;"></div>
+        <div class="box5" style="background-color: yellow;"></div>
+        <div class="box6" style="background-color: black;"></div>
+        <div class="box7" style="background-color: purple;"></div>
+        <div class="box8" style="background-color: red;"></div>
+        <div class="box9" style="background-color: orange;"></div>
+        <div class="box10" style="background-color: grey;"></div>
+    </div>
+</body>
+</html>

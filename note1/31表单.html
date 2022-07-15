@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        表单：
+        在现实生活中，表单用于提交数据
+        在网页中也可以使用表单
+        网页中的表单用于将本地的数据提交至服务器
+        使用form标签来创建一个表单，form中必须要有的一个属性是action
+            action指定提交的服务器的地址
+    -->
+    <form action="../exercise/09.电影卡片练习.html">
+
+        <!--
+            添加表单项：
+            input：
+                1.文本框：text
+                注意：数据要提交到服务器中，必须要为元素指定一个name属性值
+                2.提交按钮：sumbit
+                3.密码框：password
+                注意：数据要提交到服务器中，必须要为元素指定一个name属性值
+                4.单选按钮：radio
+                注意：像这种选择框。我们还必须要指定一个value属性，value会作为用户填写的一个值提交给服务器
+                --checked可以将单选按钮设置为默认选中
+                5.多选框：checkbox
+            select：下拉列表
+
+        -->
+        文本框：
+        <input type="text" name="submit">
+        <br>
+        按钮：
+        <input type="submit" value="注册">
+        <br>
+        密码框：
+        <input type="password" name="pass">
+        <br>
+        单选按钮：
+        <input type="radio" name="select" value="male" checked>male
+        <input type="radio" name="select" value="female">famale
+        <br>
+        多选按钮：
+        <input type="checkbox" name="test">
+        <input type="checkbox" name="test">
+        <input type="checkbox" name="test" checked>
+        <input type="checkbox" name="test">
+        <input type="checkbox" name="test">
+        <br>
+        下拉列表：
+        <select name="hhh" id="">
+            <option value="1">香蕉</option>
+            <option value="2" selected>苹果</option>
+            <option value="3">梨子</option>
+        </select>
+        <input type="reset">
+    </form>
+
+
+    <!--
+        表单补充：
+        input可以是其他的type值
+            1.button  创建一个按钮，没有什么效果，可以通过js来进行设置
+            2.reset 重置，将表单内容改为默认的值
+            3.color 颜色，不常使用，因为它的兼容性不是很好
+            4.email 邮箱地址，必须书写@
+            还有很多其他html5新增的例如week，date，tel等，我们在后面用到的时候再学习
+
+        input还有其他很多属性：
+            例如required,autocomplete等
+            autoconplete 用于设置自动补全，例如autocomplete="off"表示关闭提示
+            readonly 将表单项设置为只读，数据不可以修改，但是数据可以被提交
+            disabled 将表单设置为禁用，数据不可以被提交
+            autofocus 设置表单项自动获取焦点
+            required 设置表单为必填项
+    -->
+    <form action="../exercise/09.电影卡片练习.html">
+        <input type="submit" value="提交">
+        <input type="button" value="按钮">
+        <input type="reset">
+        <br>  以上用input定义的按钮和以下button定义的一样：
+        <br>
+        <button type="submit">提交</button>
+        <button type="button">按钮</button>
+        <button type="reset">重置</button>
+        <br>
+        颜色框：<input type="color">
+        <br>
+        邮箱地址：<input type="email">
+        <br>
+        示范input的一些属性：
+        <br>
+        <input type="text" name="name" autocomplete="off" required>
+        <br>
+        <input type="text" name="123" value="你好" autofocus>
+    </form>
+</body>
+</html>

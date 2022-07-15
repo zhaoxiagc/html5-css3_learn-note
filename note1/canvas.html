@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <title>
+            我的第一个测试网页
+        </title>
+        <style>
+            p
+            {
+                display: block;
+                background-color: rgb(202, 9, 9);
+                background-size: width="100px",height="125px";
+                padding: 20px;
+                border: 1px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <p>这里想要测试一个Javascript程序的效果</p>
+        <p id="demo">点击按钮，文本的值就会改变</p>
+
+        <script>
+            function myFunction()
+            {
+                document.getElementById("demo").innerHTML="看到了吧，这里的文字就发生了改变";
+            }
+        </script>
+
+    <button type="button" onclick="myFunction()">点击这里看看</button>
+
+    <canvas id="demo1" width="200" height="200" style="border:1px solid">一个画布</canvas>
+    <script>
+        var c=document.getElementById("demo1").getContext('2d');
+            c.fillStyle='red';
+            c.fillRect(50,50,100,100);    //在画布上绘制 100*100 的矩形，从坐标开始 (50,50)
+            c.font="20px";
+            c.fillText("Hello World!",10,50);
+            c.moveTo(50,50);
+            c.lineTo(150,150);
+            c.stroke();
+    </script>
+    </body>
+</html>

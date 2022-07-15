@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1
+        {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin-top: 100px;   /*相邻垂直外边距重叠*/
+            float: left;
+        }
+        .box1::before{
+            content: "";
+            display: table;  /*可以隔开两个元素，使得父子元素不满足相邻的条件，就不会出现外边距重叠了*/
+        }
+
+        /*clearfix可以同时解决高度塌陷和外边距重叠的问题
+        所以当在遇到这些问题时，直接使用clearfix即可
+        
+        
+        例如以下代码中的
+        
+        .clearfix::after,
+            content: "";
+            display: table;
+            clear:both;
+        是用来清除浮动的。解决高度塌陷问题
+        
+       
+        .clearfix::before{
+            content: "";
+            display: table;
+        是用来解决外边距重叠问题的
+
+
+        }*/
+        .clearfix::after,
+        .clearfix::before{
+            content: "";
+            display: table;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

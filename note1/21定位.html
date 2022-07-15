@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            font-size: 60px;
+        }
+        .box1{
+            background-color: #bfa;
+        }
+        .box2{
+            background-color: orange;
+            position:absolute;
+            margin: auto;
+            top: 0;
+            bottom:0;
+            left:0;
+            right:0;
+
+        }
+        .box3{
+            background-color: yellow;
+        }
+
+        /*想让box2在box1的右侧，可以用margin-left和margin-top来设置
+        但是box3也会跟着移动，这是我们不希望的，所以引入定位*/
+
+        /*
+        定位：是一个更加高级的布局方案
+            通过定位，可以将一个元素摆放到页面的任意位置
+            使用position属性来设置定位
+                可选值：
+                static    默认值，元素是静止的没有开启定位
+                fixed    开启元素的固定定位
+                relative  开启元素的相对定位
+                absolute    开启元素的绝对定位
+                sticky    开启元素的粘滞定位
+
+
+        1.relative相对定位
+            元素设置相对定位以后，如果不设置偏移量，元素不会发生任何变化
+            （注意：是元素没有发生任何变化，不止是位置，其他属性也没变）
+            偏移量offset，通过相对定位的偏移量来设置元素位置
+                top
+                bottom
+                    top和bottom控制垂直位置，但通常只会使用一个，top越大元素越向下走，bottom越大元素越往上走
+                left
+                right
+                    left和right控制水平位置，但通常只会使用一个
+        
+        注意：
+            相对定位是参照于元素在文档流中的位置来体现的
+            相对定位会提升元素的层级
+            相对定位不会使元素脱离文档流
+            相对定位不会改变元素的性质，块还是块，行内还是行内
+
+        2.absolute绝对定位
+            开启绝对定位以后，如果不设置偏移量，元素的位置不会发生变化
+            （注意，只是位置没变，其他很多可能都变了）
+            元素会从文档流中脱离
+            绝对定位会改变元素的性质（因为脱离文档流了），行内变成块
+            绝对定位会使元素提升一个层级
+        注意：绝对定位元素是相对于其包含块进行定位的
+
+            包含块（containing block）：
+                正常情况下，包含块就是离当前元素最近的祖先块元素
+                开启绝对定位的元素，其包含块就是距离当前元素最近的开启定位的祖先元素
+                如果所有的祖先元素都没有开启定位，则相对于根元素进行定位
+                -html（根元素，初始包含块）
+        
+        3.fixed固定定位
+            固定定位的大部分性质都和绝对定位一样
+            唯一不同的是，固定定位永远参考浏览器的视口进行定位
+
+        4.sticky粘滞定位
+            粘滞定位和相对定位的特点基本一致
+            但是粘滞定位可以在元素到达某个位置时将其固定
+            兼容性不是很好，尤其是IE浏览器
+        */
+
+
+
+        /*
+            注意：
+                元素添加absolute定位以后，水平方向的布局就需要添加left和right两个值
+                此时规则和之前一样，只是多添加了两个值：
+                    当发生过渡约束时（9个值中没有auto），则会自动调整right使得等式满足
+                    可以设置auto的值：left right margin-left margin-right content
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

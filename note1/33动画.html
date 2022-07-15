@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-left: 10px;
+        }
+        .box2{
+            background-color: #bfa;
+            animation-name:test;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: calc(2);
+            animation-direction:alternate;
+            animation-play-state:running;
+            animation-fill-mode:backwards;
+            /*
+            设置box2的动画：
+                animation-name： 要对当前元素生效的关键帧的名字
+                animation-duration: 设置动画的时间长度
+                animation-delay: 设置动画的延时
+                animation-timing-function:设置动画的效果
+                注意：动画的基本属性和过渡的一样，但animation还多出一些属性
+                animation-iteration-count：设置动画执行的次数
+                    可选值：
+                        直接指定次数
+                        infinite 无限执行
+                animation-direction：改变动画执行的方向
+                    可选值：
+                        normal 默认值，从from到to运行
+                        reverse 倒放，从to到from运行
+                        alternate 第一遍从from向to运行，反复运行时反向运行，依次循环（反复横跳）
+                        alternate-reverse 第一遍从to向from运行，反复运行时反向运行，依次循环（反复横跳）
+                animation-paly-state: 设置动画的执行状态
+                    可选值：
+                        running 默认值，动画运行
+                        paused 动画暂停
+                animation-fill-mode: 动画的填充方式
+                    可选值:
+                        none 默认值，动画执行完毕，元素回到原来的位置
+                        forwards 动画执行完毕，元素会停止在动画结束的位置
+                        backwards 动画延时等待时，就已经会变成from的样式，而不是元素的初始位置
+                        both 结合forwards和backwords两种属性
+            */
+        }
+
+        .box1:hover div{
+            animation-play-state: paused;
+        }
+        /*
+        动画：
+            动画和过渡类似，都可以实现一些动态的效果
+                不同的是，过渡需要在某个属性发生变化时才会触发，
+                而动画可以自动触发效果
+            要设置动画效果，就必须要设置一个关键帧，关键帧设置了动画执行的每一个步骤
+
+        */
+        @keyframes test{
+            from{
+                margin-left: 0;
+                background-color: darkgoldenrod;
+            }   /*from表示动画的开始位置，也可以使用0%*/
+            to{
+                margin-left:700px;
+            }   /*to表示动画的结束位置，也可以使用100%*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

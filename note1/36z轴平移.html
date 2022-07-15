@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: silver;
+            border: 1px solid red;
+        }
+        html{
+            perspective: 800px;
+            /*设置当前网页的视距为800px，人眼距离网页的距离是800像素
+            如果我们将translateZ的值设置为800px,则元素会放大至铺满整个页面，也就是距离我们人眼最近*/
+            
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;
+            transition: 2s;
+        }
+        body:hover .box1{
+            transform: translateZ(800px);
+        }
+        /*
+        z轴平移：
+            就是调整元素在z轴的位置
+            正常情况下，就是调整元素和人眼之间的距离
+                -距离越大，元素离人越近
+            由于z轴的平移属于立体效果，近大远小，但是默认情况下网页不支持透视的
+                -如果要能看见效果，就必须要设置网页的视距
+        */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

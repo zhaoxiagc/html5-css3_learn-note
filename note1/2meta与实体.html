@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--可以设置网站的一些元数据，元数据是不给用户看的，而是帮助搜索引擎进行分类搜索的
+    1. charest 制定网络的字符集
+    
+    name 指定的数据的名称
+    content 指定的数据的内容
+    例如：京东购物网站的keywords应该是“网上购物“，所以我们在浏览器中搜索这个关键词的时候，京东的购物网页就会显示出来
+    2.keywords表示网站的关键字，可以同时制定多个关键字，关键字之间用逗号隔开
+    3.discription 用于指定网站的描述，显示在网络上列表下方的描述部分（就是超链接下方的文字）
+    4.equiv用于设置网页重定向-->
+    
+    <!--对应的实例如下：
+    <meta name="keywords" content="购物,京东,网上购物,商城,购物体验">
+    <meta name="discription" content="这是一个非常不错的网站">
+    <meta http-equiv="refresh" content="3;http://www.baidu.com">
+    -->
+
+    <title>Document</title>
+</head>
+<body>
+    <p>vscode好方便
+        <br/>1. !和tab可以直接生成基本架构<br>2. 不需要再输入箭头，<br>3. 还可以实时显示</p>
+    <p>今天       天气真不错</p>
+    <!--在网页中的多个空格都会只显示为一个空格-->
+
+    <p>a<b>c</p>
+    <p>a< b >c</p>
+    <!--注意：在html中，有的特殊符号不能直接书写，例如上面出现的<和>这样的符号
+    如果需要书写的话，就需要“实体”，或者是转义字符
+        实体的语法：
+            &实体的名字；
+            &nbsp； 就代表一个空格
+            &gt;    大于号
+            &lt;    小于号
+            &copy； 版权符号-->
+    <p>今天 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;天气真不错</p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            color:yellow;
+        }
+        .d1{
+            color: gold;
+        }
+        .red{
+            color:red;
+        }
+
+        #box1{
+            color: orange;
+        }
+        div#box1{
+            color:darkmagenta;
+        }
+        div,p{
+            color: aqua !important;
+        }
+        div{
+            font-size: 20px;  
+        }
+        *{
+            font-size: 40px; 
+        }
+        
+        /*样式的冲突：
+                当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的值时，此时就会发生样式冲突
+                发生样式冲突时，应用哪个样式由选择器的权重（优先级）来决定
+
+        选择器权重：
+            ！important  在某个样式后面加入这个，该元素就会变成最高的优先级，但开发中慎用
+            内联选择器    1,0,0,0
+            id选择器      0,1,0,0
+            类和伪类选择器  0,0,1,0 
+            元素选择器      0,0,0,1
+            通配选择器      0,0,0,0
+            继承的样式      没有优先级
+            
+            比较优先级时，需要把所有的选择器相加，再看权重，注意：分组选择器是单独计算的（，隔开的）
+            选择器的累加不会超过其最大的数量级，例如class选择器不会超过id选择器
+            
+            如果选择器优先级计算后相同,则优先使用靠下的style
+            */
+    </style>
+    
+</head>
+<body>
+    <div id="box1" class="red" style="color:green">我是一个div</div>
+    <p>我是一个p元素</p>
+    <div class="red d1 d2 d3">我也是一个div标签
+        <span>我是div中的span</span>
+    </div>
+</body>
+</html>

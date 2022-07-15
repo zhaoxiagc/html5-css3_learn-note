@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            /*background-color: #bfa;*/
+            
+            /*
+            渐变：
+                通过渐变可以设置一些复杂的背景颜色，可以实现从一个颜色向其他颜色过渡的效果
+                ！！注意：渐变式图片，需要通过background-image来设置
+
+                1.线性渐变：颜色沿着一条直线发生变化
+                    linear-gradient()
+                        linear-gradient(red,yellow) 表示红色是开头，黄色是结尾，中间是过渡区
+                    -线性渐变的开头可以指定渐变的方向
+                        to right
+                        to left
+                        to bottom
+                        to top
+                        to top left
+                        to top right
+                        to bottom left
+                        to bottom right
+                        deg 表示度数
+                        turn 表示圈
+                    -渐变可以同时指定多个颜色，多个颜色默认情况下平均分布
+                        也可以手动指定渐变的分布情况
+           */
+
+
+            /*background-image: linear-gradient(90deg,red,yellow,#bfa,blue);*/
+            /*background-image: linear-gradient(red,yellow 100px,green,orange 180px);*/
+            background-image: repeating-linear-gradient(red 50px,yellow 100px);
+        }   
+            /*
+                2.径向渐变（放射性的效果）
+                语法：radial-gradient（大小 at 位置，颜色 位置，颜色 位置，颜色 位置）
+                默认情况下径向渐变的形状根据元素的形状来计算的
+                    正方形-->圆形
+                    长方形-->椭圆形
+                    --也可以手动指定径向渐变的大小，设置两个像素，作为横向和纵向的半径长度
+                        circle 指定圆形
+                        ellipse 指定椭圆
+
+                    此外可以使用以下属性来设置渐变的大小：
+                        closest-side   近边，表示渐变从设定的圆心开始，到距离圆心最近的边截止的距离为圆的半径
+                        farthest-side   远边，表示以从圆心到距离最远的边的距离
+                        同理还有closest-corner  和   farthest-coener   近角，远角
+
+                    --也可以指定渐变的位置
+                        语法是用at+两个像素值，指定的是圆心的坐标位置
+            */
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-image: radial-gradient(100px 200px at 100px 100px,red,yellow);
+            }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

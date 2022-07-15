@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        p{
+            color: red;
+            background-color: orange; 
+            font-size: 40px;  
+            /* 注意这个时候p中的span元素背景也显示为橙色了，不是因为继承，而是因为span默认是透明色transparent，透过了p的背景而已*/
+        }
+        /*样式的继承：我们为一个元素设置的样式也被应用到它的后代元素中
+            继承发生在祖先元素和后代元素之间
+            继承的设计时为了方便我们开发，利于继承
+                只需要设计一次，就可以让所有元素都具有这个样式
+            注意：并不是左右的样式都会被继承，例如背景相关的、布局相关等的这些样式不会被继承
+                */
+        div{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>我是一个p元素
+        <span>
+            我是一个p元素中的span元素
+        </span>
+    </p>
+
+    <span>
+        我是p元素外的span元素
+    </span>
+
+    <div>我是div
+        <span>我是div中的span
+            <em>
+                我是span中的em元素
+            </em>
+        </span>
+    </div>
+</body>
+</html>

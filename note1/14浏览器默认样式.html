@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            border:1px solid black;
+        }
+        body{
+            margin:0;
+        }
+        p{
+            margin:0;
+        }
+        ul{
+            margin:20px;
+            padding: 0;
+            list-style:none;   /*去除列表样式*/
+        }
+        *{            /*利用通配选择器去除所有样式*/
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+
+<!--
+    通常情况下，浏览器会为元素设置一些默认样式
+    默认样式的存在会影响页面的布局,所以通常情况下，编写网页时，我们要清除默认样式
+    可以造网页中F12来查看每个元素的盒模型和每个部分的具体值
+    由于网页中要修改去除的默认样式太多了，所以一般可以使用link引入外部样式表来得到我们需要的网页样式
+-->
+<body>
+    <div class="box1"></div>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <ul>
+        <li>第一</li>
+        <li>第二</li>
+        <li>第三</li>
+    </ul>
+</body>
+</html>

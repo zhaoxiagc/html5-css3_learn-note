@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border-color: blue;
+            border-width: 20px;
+            border-style: solid dotted dashed double;
+            margin-bottom: 100px;
+            margin-left: 20px;
+        }
+        .box2{
+            width: 200px;
+            height: 300px;
+            border: aqua solid 20px;
+        }
+        .box3
+        {
+            height:300px;
+            border:red 15px solid;
+        }
+        .box4{
+            height: 100px;
+            margin-left: 10px;
+            margin-right: auto;
+            width:200px;
+            background-color: orange;
+        }
+        .box5{
+            background-color: yellow;
+            height: 600px;
+        }
+        .box6{
+            height: 200px;
+            background-color: yellowgreen;
+            width: 200px;
+            margin-bottom: 100px;
+        }
+        .box7
+        {
+            width: 400px;
+            height: 700px;
+            background-color: purple;
+            overflow:auto;
+        }
+        .box8{
+           width: 300px;
+           height: 1000px;
+            background-color: green;
+        }
+        .box9{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            margin-bottom: -100px;
+        }
+        .box10{
+            background-color: green;
+            width: 200px;
+            height: 200px;
+            margin-top: -100px;
+        }
+        .box11{
+            background-color:blue;
+            width: 200px;
+            height: 100px;
+            margin-bottom: 100px;
+            padding: 50px;
+        }
+        .box12{
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+       
+        }
+        .box13{
+            background-color: yellow;
+            width: 10px;
+            height: 100px;
+            padding: 50px;
+            border: #bfa 6px solid;
+            margin: 16px;
+        }
+        .box14{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+        .box15{
+            display:block;
+            background-color: yellowgreen;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    盒模型/盒子模型/框模型（box model）：
+        -CSS将页面中的所有元素都设置为了一个矩形的盒子
+        -将元素设置为矩形的盒子以后，对页面的布局就变成了将不同的盒子摆放到不同位置
+        -每一个盒子都由以下几个部分组成
+            内容区content
+                宽度和高度属性
+            边框border
+                边框（border）：边框属于盒子边缘，边框里边属于盒子内部，出了边框就是盒子外部
+                    边框宽度：border-width    //有一个默认值，一般都是三个像素，所以不写的话，也会显示边框
+                    边框颜色：border-color    //默认是黑色
+                    边框样式：border-style    //默认值是none，表示没有边框
+                            solid表示实线，dotted表示点状虚线，dashed表示线状虚线，double表示双线
+                    border 简写属性，通过该属性可以设置边框所有的相关样式，并且没有顺序要求
+            内边距padding
+            外边距margin
+                -不可见，但是会影响盒子的位置
+                -元素在页面中是按照自左向右的顺序排列的
+                    所以默认情况下如果我们设置的左和上外边距则会移动元素自身
+                    而设置下和右外边距会移动其他元素
+                -会影响盒子实际占用空间的大小
+    -->
+
+
+    <!--
+        元素的水平布局：
+            元素在其父元素中水平方向的位置由以下几个属性共同决定:
+                margin-left
+                border-left
+                padding-left
+                width
+                padding-right
+                border-left
+                margin-left
+            一个元素在其父元素中。它的水平布局必须满足以下等式：
+                margin-left+border-left+padding-left+width+padding-right+border-left+margin-left=父元素内容宽度
+            以上等式必须满足，如果计算结果使等式不成立，称为过渡约束，则等式会自动调整
+            调整的情况：
+                -如果这七个值中没有为auto的情况，则浏览器会自动调整margin-right值以使等式成立
+                -这七个值中有三个值可以设置为auto
+                    width
+                    margin-left
+                    margin-right
+                    如果某个值为auto，则会自动调整为auto的那个值以使等式成立
+                    如果把一个宽度和一个外边距设置为auto，则会将宽度调整为最大，设置为auto的外边距自动为0
+                    如果将三个值都设置为0，则外边距都是0，宽度最大
+                    如果将两个外边距设置为auto，则会将两个外边距两边设置成相同的值，所以利用这个特点来是元素在其父元素中水平居中
+            注意：为满足上述等式，margin的值可以为负值
+            例如，父元素宽度为800px，子元素width为1000px，则margin-right设置为auto时，应该为-200px
+    -->
+
+
+    <!--
+        元素垂直布局:
+            默认情况下，父元素的高度会被内容撑开，但也可以自己设置
+            子元素是在父元素的内容区中排列的，如果子元素的大小超过父元素，则称为溢出
+            使用overflow属性来设置父元素如何处理溢出的子元素
+            overflow的可选值：
+                visible 默认值，子元素会从父元素中溢出，在父元素外部的位置显示
+                hidden 隐藏，溢出的内容将会被裁剪，不会被显示
+                scroll 滚动，生成两个滚顶条，通过滚动条来查看完整的内容
+                auto 根据需要生成滚动条
+
+    -->
+
+
+    <!--
+        （垂直）外边距折叠/重叠：
+            相邻的垂直方向的外边距会发生重叠现象
+            -兄弟元素
+                兄弟元素之间的相邻垂直外边距会取两者之间的较大值（两者都是正值去最大值）
+                特殊情况：
+                    如果相邻的外边距一正一负，则取两者的和
+                    如果相邻的外边距都是负值，则取两者中绝对值较大的
+                注意：兄弟元素的重叠对开发时有利的，不需要处理
+            -父子元素：
+            父子元素之间的相邻外边距，子元素的会传递给父元素（上外边距）
+            父子外边距的折叠会影响到页面的布局，必须要进行处理
+    -->
+
+    <!--
+        行内元素的盒模型
+            行内元素不支持设置元素的宽度和高度，内容区的大小直接由内容决定
+            行内元素可以设置padding，但是垂直方向padding不会影响页面的布局
+            行内元素可以设置border/margin，垂直方向的border/margin不会影响页面的布局
+
+
+        display 可以用来设置元素显示的类型
+        可选值：
+            inline 将元素设置为行内元素
+            block 将元素设置为块元素
+            inline-blocks 将元素设置为行内块元素
+                            行内块，既可以设置宽度高度，又不会独占一行
+            table 将元素设置为一个表格
+            none 元素不在页面中显示
+
+
+        visibility 用来设置元素的显示状态
+        可选值：
+            visible 默认值，元素在页面中正常显示
+            hidden 元素在页面中隐藏不显示，但是依然占据页面的位置
+    -->
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+    <div class="box5">
+        <div class="box6"></div>
+        <div class="box6"></div>
+    </div>
+    <div class="box7">
+        <div class="box8"></div>
+    </div>
+    <div class="box9"></div>
+    <div class="box10"></div>
+    <div class="box11">
+        <div class="box12"></div>
+    </div>
+    <span class="box13">我是span</span>
+    <div class="box14"></div>
+
+    <span class="box15"></span>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+
+            /*
+            background-color  用来设置背景颜色
+            backdround-image  用来设置背景图片
+            也可以同时设置背景颜色和背景图片，背景颜色就会成为图片的背景色
+                如果背景图片小于元素，则背景图片会自动在元素中平铺，将元素铺满
+                如果背景图片大于元素，将会有一部分背景无法完全显示
+                如果背景和元素一样大，则会直接正常显示
+            background-repeat 用来设置背景的重复方式
+                可选值：
+                    repeat 背景会沿着x和y轴方向平铺
+                    repeat-x 背景沿着x轴方向重复
+                    repeat-y 背景沿着y轴方向重复
+                    no-repeat   背景图片不重复，有多大就显示多大
+            background-position 用来设置背景图片的位置（默认在左上角）
+                设置方式：
+                    通过top left right bottom center 几个表示方位的词来设置背景图片的位置
+                    至少需要两个值来表示位置，所以可以将元素看成是九宫格，让背景图片位于某一格子
+                    如果只设置了一个值，则默认第二个值为center
+
+                    通过偏移量来指定背景图片的位置
+                    一个是水平方向的偏移量，还有一个是垂直方向的偏移量
+                    如果为负值，则向相反方向偏移
+            */
+        }
+        .box2
+        {
+            width: 500px;
+            height: 500px;
+            overflow: auto;
+            background-color: #bfa;
+            background-image: url("../exercise/09.jpg");
+            background-repeat: no-repeat;
+            padding: 30px;
+            border: 30px double orange;
+            background-position: 0px 0px;
+            background-origin:border-box;
+            background-clip: padding-box;
+            background-size: contain;
+        }
+        .box3{
+            width: 300px;
+            height: 1000px;
+            background-color: dodgerblue;
+            background-image: url("../exercise/06.jpg");
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        /*
+        background-clip 设置背景的范围（注意：不会影响背景的位置，影响的只是显示出来的背景，可通过更改padding清晰地认识这一点）
+            可选值：
+                border-box 默认值，背景会出现在边框的下边（注意，会压在边框下一部分）
+                padding-box 背景不会出现在边框，只出现在内容区和内边距
+                content-box 背景只出现在内容区
+       
+        background-origin 设置背景图片的偏移量计算的原点
+            可选值：
+                padding-box 默认值，background-position从内边距处开始计算
+                content-box 背景图片的偏移量从内容区开始计算
+                border-box 背景图片的偏移量从边框处开始计算
+
+        background-size 设置图片的大小
+            第一个值表示宽度
+            第二个值表示高度
+            注意：如果只写一个，则第二个值默认是auto
+
+            可选值：
+                auto 默认值
+                cover 图片的比例不变，将元素铺满
+                contain 图片的比例不变，将图片在元素中完整显示
+        background-attachment 设置背景图片是否随着元素移动
+            可选值：
+                scroll  默认值，背景图片跟随元素移动 
+                fixed 背景图片固定在页面中     
+        */
+
+
+        /*
+        背景相关的简写属性，所有背景相关的样式都可以通过该样式来设置
+        并且该样式顺序没有要求，也没有哪个属性是必须写的
+        但注意，background-size要写在background-position的后面，并且使用/隔开
+            background-position/background-size
+        另外，background-origin和background-clip 必须按照origin在前，clip在后顺序来写
+        */
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2">
+        <div class="box3">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente illum culpa veniam molestias dolores eaque minima accusamus dicta, quod esse ipsa ratione, odit vero quas aspernatur libero laborum nobis.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis unde voluptatibus pariatur quasi veniam ducimus nisi rerum cumque id, sint, doloremque aliquid repellat ab accusantium voluptatem laboriosam quia vero. Facere.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nam, sint dicta enim odit cumque beatae perspiciatis quaerat quasi nihil quidem aliquam totam amet alias ratione impedit? Voluptatibus, delectus harum.
+        </div>
+    </div>
+</body>
+</html>

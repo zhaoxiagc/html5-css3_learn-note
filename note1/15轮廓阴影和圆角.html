@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            outline: 1px rebeccapurple solid;     /*分别写成ouline和border来看效果*/
+            /*轮廓用来设置元素的轮廓线，用法和border一模一样
+            轮廓和边框的不同点就是轮廓不会影响到可见框的大小*/
+
+
+            box-shadow: 30px 30px 10px rgb(134, 134, 129);
+            /*用来设置元素的阴影效果，阴影不会影响页面的布局
+            默认情况下阴影和元素是重叠的，设置的两个值是阴影的偏移量
+                第一个值：水平偏移量，正值右移，负值左移
+                第二个值：垂直偏移量，正值下移，负值上移
+                第三个值：阴影的模糊半径，值越大，阴影越模糊
+                第四个值：阴影的颜色
+                */
+
+
+            border-radius: 50px;   /*四个角都是圆*/
+            border-radius: 50%;    /*四个角都是圆形*/
+            border-top-left-radius:50px 20px;  /*左上角是一个椭圆*/
+            /*用来设置圆角，圆角设置的是一个圆角的半径
+            border-top-left-radius
+            border-top-right-radius
+            border-bottom-left-radius
+            border-bottom-right-radius
+            border-radius可以指定四个角的圆角半径，左上、右上、右下、左下
+            */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    hello
+</body>
+</html>

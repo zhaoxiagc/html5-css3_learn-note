@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px red solid;
+            font-size: 50px;
+            line-height: 3;
+            font-family: 'Times New Roman', Times, serif;
+
+            /*
+            font 简写属性
+                上面两行代码可以简写如下：
+                font 可以设置字体相关的所有属性
+                语法：
+                    font 字体大小/行高 字体族    *这两个属性必须写，缺一不可
+                    行高可以省略不写，如果省略不写，就会显示为默认值，覆盖掉前面设置的行高
+                    所以要显示行高，就必在这里写上
+                
+            */
+            font:bold italic 50px/3 'Times New Roman', Times, serif;
+
+
+
+            /*
+            font-weight 字重，用来设置字体的加粗
+                可选值：
+                    normal 默认值，不加粗
+                    bold 加粗
+                    100-900九个级别，表示九个加粗的级别(基本没什么用)
+            */
+            font-weight: 900;
+
+            /*
+            font-style 字体的风格
+                normal 正常的
+                italic 斜体
+            */
+
+
+
+            /*注意：
+                font中省略不代表是没有设置，而是设置为默认值，会覆盖掉它之前设置的属性*/
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        今天天气真的很不错 hello world
+    </div>
+</body>
+</html>

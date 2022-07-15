@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width:200px;
+            height: 200px;
+            background-color: #bfa;
+            float:left;
+        }
+        .box2{
+            width:300px;
+            height: 300px;
+            background-color: orange;
+        }
+        .box3{
+            width:50px;
+            height: 50px;
+            background-color: red;
+            float:left;
+        }
+        .box4{
+            width:50px;
+            height: 50px;
+            background-color: blue;
+            float:left;
+        }
+    /*
+    通过浮动可以使得一个元素向其父元素的左侧或者右侧移动
+        使用float属性来设置子元素的浮动
+            可选值：
+            none 默认值，不浮动
+            left 元素向左浮动
+            right 元素向右浮动
+        注意：元素设置浮动以后，水平布局的等式便不需要强制成立
+
+        元素设置浮动以后，元素会完全从文档流中脱离，不再占用文档流中的位置，
+        所以还在文档流中的元素会自动向上移动
+
+        浮动元素会完全脱离文档流，设置浮动以后，元素会向父元素的左侧或者右侧移动
+        浮动元素不会超过它前面的浮动元素（水平概念）
+
+        如果浮动元素的上边是一个没有浮动的块元素，则浮动元素无法上移
+
+        浮动元素不会超过它上边浮动的兄弟元素（垂直概念）
+
+        浮动的主要作用就是让页面中的元素可以水平排列，实现一行显示
+    */
+
+
+
+
+    /*
+    浮动的其他特点：
+        浮动元素不会盖住文字，文字会自动环绕在浮动元素周围
+        元素设置浮动后，会从文档流中脱离，脱离后，其性质和元素的一些特点也会发生变化
+
+        脱离文档流的特点：
+        块元素：
+            块元素不再独占页面的一行
+            脱离文档流后，块元素的宽度和高度默认都是被内容撑开
+        行内元素：
+            行内元素脱离文档流以后，会变成块元素，特点和块元素一样
+            此时就可以设置宽高了
+
+        脱离文档流以后，就不需要再区分块和行内元素了
+   */
+    </style>
+    
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <p>
+        我们都有一个家，名字叫中国，兄弟姐妹都很多，景色也不错
+    </p>
+    <div class="box3"></div>
+    <p>我们都有一个家，名字叫中国</p>
+    <div class="box4"></div>
+    <p>兄弟姐妹都很多，景色也不错</p>
+</body>
+</html>
