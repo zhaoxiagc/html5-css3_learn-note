@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        使用媒体查询：
+            语法：@media 查询规则{}
+                媒体类型：
+                    all  所有设备
+                    print   打印设备
+                    screen   带屏幕的设备
+                    speech    屏幕阅读器
+                可以使用逗号连接多个媒体类型，这样它们之间就是一个或的关系
+                可以在媒体类型的前面加上一个only，表示只有，only的使用主要是为了兼容一些老版本的浏览器
+        */
+
+        /*
+        媒体特性：
+            width 视口的宽度
+            height 视口的高度
+
+            min-width 视口的最小宽度
+            max-width 视口的最大宽度
+
+            样式切断的分界点，我们称其为断点，也就是网页的样式会在这个点时发生改变
+            一般比较常用的断点
+                小于768px 超小屏幕 max-width=768px
+                大于768px 小屏幕   min-width=768px
+                大于992px 中型屏幕  min-width=992px
+                大于1200 大屏幕     min-width=1200px
+
+            注意：不同断点用逗号隔开表示或，用and连接表示且
+        */
+        @media speech{
+            body{
+                background-color: #bfa;
+            }
+        }
+        @media (min-width:500px) and (max-width:700px){
+            body{
+            background-color: rgb(236, 157, 157);
+            }   /*意思是当视口大小为大于500px的时候，网页背景就会响应变成粉红色*/
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        响应式布局：
+            网页可以根据不同的设备或者窗口大小呈现出不同的效果
+            使用响应式布局，可以使一个网页适用于所有设备，大大简化了开发成本
+            响应布局的关键，就是 媒体查询
+            通过媒体查询，可以为不同的设备，或者设备的不同样式来分别设置样式
+     -->
+</body>
+</html>

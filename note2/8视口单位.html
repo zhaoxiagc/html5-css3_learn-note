@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 50vw;
+            height: 100px;
+            background-color: #bfa;
+        }
+        .box2{
+            width: 6.4vw;
+            height: 4.666vw;
+            background-color: rgb(208, 92, 224);
+        }
+
+
+        html{
+            /*旧版本网页中字体大小最小是12px,不能设置一个比12px更小的字体
+            如果设置了一个小于12px的字体，则字体自动设置为12px*/
+            font-size: 0.133333333vw;
+        }
+        .box3{
+            width: 48rem;
+            height: 35rem;
+            background-color: rgb(36, 191, 211);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        不同设备完美视口的大小是不一样的
+            iPhone6   --375px
+            iPhone6puls  --414px
+
+        由于不同设备视口和像素比不同，所以同样的375像素在不同设备下意义是不一样的
+            比如在iPhone6中375就是满屏的，而在iPhone6puls中会缺一块
+
+        所以在移动端开发时，就不能再用px来进行网页布局了
+            我们可以使用百分比，但是不用的元素参照的元素不同，使用起来会很不方便
+
+        为解决这个问题，提出了一个新的单位vw
+        vw 表示的及时视口宽度（view width）
+            -100vw = 一个视口的宽度
+            -1vw = 1%视口宽度
+        vw这个单位永远相对于视口宽度进行计算
+
+
+        目前设计图的宽度：
+            750px 1125px
+            其实这里的750px和1125px指的就是手机界面的宽度，是物理像素
+            以iPhone6为例，它的css宽度为375px，所以这里相当于比例为1:2和1:3
+            实现了用两个/三个物理像素去呈现一个css像素的效果，这就使得页面放大了，我们看到的网页就会更加清晰
+            但是注意，这里的难点在于如何将px转换为vw
+                例如：
+                    创建一个48px*35px大小的元素，相当于24px*17.5px大小的视口
+                    思路一（老师讲的）：
+                        100vw=750px, 1px=0.133333333vw
+                        48px=48*0.13333333vw=6.4vw
+                        35px=35*0.13333333vw=4.666666666vw
+                    思路二（我自己能理解的）：    
+                        100vw=375px，1vw=3.75px
+                        24px=6.4vw
+                        17.5px=4.6666vw
+                    但是我们看到这种计算方式比较复杂，不推荐
+                    
+                    代码见box2
+                    vw适配：我们也可以使用rem单位来进行设计，代码见box3
+            
+        
+
+    -->
+    <div class="box1">444</div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+//@import可以引入其他less文件到当前less文件
+//使用@import可以对less进行模块化处理
+@import "syntax.less";
+
+
+//在less中的所有数值都可以直接进行数值运算
+.box1{
+    display: block;
+    width: 200px + 60px;
+    height: 200px*2;
+}

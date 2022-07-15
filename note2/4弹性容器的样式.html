@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .ul1{
+        width: 800px;
+        border: 10px red solid;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        /*
+        flex-direction 设置弹性容器子元素的排列方向
+        flex-wrap  设置弹性元素是否在弹性容器中自动换行
+            可选值：
+            nowrap 默认值，元素不会自动换行
+            wrap  元素会沿着辅轴方向自动换行
+            wrap-reverse 元素沿着辅轴反方向换行
+    
+        flex-flow 是wrap和direction的简写属性，并且没有顺序要求
+        
+
+        justify-content   如何分配主轴上的空白空间，即主轴上的元素如何排列
+            可选值：
+                flex-start 元素沿着主轴起边排列
+                flex-end 元素沿着主轴终边排列
+                center 元素在主轴中居中排列
+                space-around 空白分布在元素两侧
+                space-evenly 空白分布在元素单侧
+                space-between 空白分布在元素之间
+        */
+    }
+    .ul1 li{
+        width: 200px;
+        height: 100px;
+        background-color: #bfa;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+        flex-shrink: 0;
+    }
+    .ul1 li:nth-child(2)
+    {
+        background-color: pink;
+    }
+    .ul1 li:nth-child(3){
+        background-color: orange;
+    }
+
+    .ul2{
+        width: 400px;
+        height: 800px;
+        border: 10px red solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content:stretch;
+    }
+    /* 
+    align-items  元素在辅轴上如何对齐
+            -设置的是元素之间的一种对其方式
+            可选值：
+                stretch 默认值，将元素的长度设置为相同的值
+                    --注意：是每一行的元素长度相同，不同行的可以不同
+                flex-start 元素不会拉伸，沿着辅轴起边对齐
+                flex-end 元素不会拉伸，沿着辅轴终边对齐
+                center  元素不会拉伸，居中对齐
+                baseline 基线对齐。沿着文字的基线进行对齐
+
+    align-content  辅轴空白空间的分布，和justify-content一样
+     */
+    .ul2 li{
+        width: 200px;
+        background-color: #bfa;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+        flex-shrink: 0;
+    }
+    .ul2 li:nth-child(2)
+    {
+        background-color: pink;
+        align-self: stretch;
+
+    /*
+    align-self  用来覆盖当前弹性元素上的align-items
+    */
+    }
+    .ul2 li:nth-child(3){
+        background-color: orange;
+    }
+</style>
+<body>
+    <ul class="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <br>
+    <ul class="ul2">
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+    </ul>
+</body>
+</html>

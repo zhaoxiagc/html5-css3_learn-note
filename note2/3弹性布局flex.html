@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 800px;
+            border: 10px red solid;
+            display:flex;
+            flex-direction: row;
+            /*
+            flex-direction  用来指定弹性容器中弹性元素的排列方式
+            可选值：
+                row 默认值，弹性元素在容器中水平排列，中国是从左向右排列
+                    主轴：自左向右
+                row-reverse 弹性元素在容器中反向水平排列，自右向左
+                    主轴：自右向左
+                column 弹性元素纵向排列，自上向下排列
+                    主轴：自上向下
+                column-reverse 弹性元素反向纵向排列，从下向上
+                    主轴：自下向上
+
+            主轴：
+                弹性元素的排列方向称为主轴，
+            侧轴：
+                与主轴垂直方向的称为侧轴，
+            */
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-basis: 200px;
+            /*
+            弹性元素的属性：
+                flex-grow 指定元素的伸展系数，默认值是0
+                    -当父元素有多余的空间时，子元素如何伸展
+                    -父元素的剩余空间，会按照比例进行分配
+
+                flex-shrink 指定元素的收缩系数
+                    -当父元素中的空间不足以容纳所有的子元素时，入伙对子元素进行收缩
+                    -默认值是1，即等比例收缩
+                    -如果设置为0，子元素就不会收缩了，元素就会从容器中溢出
+                    -值越大，收缩程度越大
+                    -缩减多少根据缩减系数的值和元素大小来计算
+
+                flex-basis  指定元素在主轴上的基础长度
+                    -如果主轴是横向的，则该元素指定的就是元素的宽度
+                    -如果主轴是纵向的，则该元素指定的就是元素的高度
+                    -默认值是auto，表示参考元素自身的高度或者宽度
+                    -如果传递了具体的值，则以这个传递的值为准
+
+                flex 简写属性，可以同时设置元素的三个样式
+                    顺序要求：伸展 收缩 基础长度
+                    可选值：
+                        initial 默认值，相当于flex:0 1 auto;
+                        auto 相当于flex:1 1 auto;
+                        none 相当于flex:0 0 auto;  表示弹性元素没有弹性
+
+                order 指定弹性元素的排列顺序
+            */
+        }
+        li:nth-child(2)
+        {
+            background-color: pink;
+        }
+        li:nth-child(3){
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        弹性盒子（伸缩盒）：
+            -是css中的又一种布局手段，主要用来代替浮动来完成页面的布局
+            -flex可以使元素具有弹性，让元素可以跟随页面的大小的改变而改变
+
+            弹性容器
+                要使用弹性盒，必须先将一个元素设置为弹性容器
+                通过display来设置弹性容器
+                    display：flex   设置为块级弹性容器
+                    display：inline-flex 设置为行内的弹性容器
+
+            弹性元素
+                弹性容器的子元素称为弹性元素，也称为弹性项
+                注意：只有弹性容器的直接子元素才是弹性元素，其他后代元素不是弹性元素
+                -一个元素可以同时是弹性容器和弹性元素
+    -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>
