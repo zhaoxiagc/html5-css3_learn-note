@@ -1,0 +1,22 @@
+/*公共样式0*/
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    min-width: 1226px;  /*作用是不会让body变得过小，所以加上一个最小宽度，当窗口小榆这个宽度是，网页就不会再缩小显示的内容了*/
+}
+
+/*设置一个类，用来表示中间容器的宽度*/
+.w{
+    width: 1226px;
+    margin: 0 auto;
+}
